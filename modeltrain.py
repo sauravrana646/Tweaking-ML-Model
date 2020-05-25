@@ -3,7 +3,7 @@ from sklearn.preprocessing import StandardScaler
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.optimizers import RMSprop
-import keras.backend as k
+import keras.backend as kb
 
 #Function to add Dense Layers
 def addDense(num):           
@@ -50,7 +50,7 @@ model.compile(optimizer= RMSprop(learning_rate=0.001),loss='categorical_crossent
 TrainedModel = model.fit(X,y_new,epochs = 10)
 
 
-k.clear_session()
+kb.clear_session()
 
 # Get Accuracy
 accuracy = (TrainedModel.history['accuracy'][-1:][0])*100
