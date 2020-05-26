@@ -4,6 +4,7 @@ from keras.models import Sequential
 from keras.layers import Dense
 from keras.optimizers import RMSprop
 import keras.backend as kb
+import os
 
 #Function to add Dense Layers
 def addDense(num):           
@@ -55,4 +56,8 @@ kb.clear_session()
 # Get Accuracy
 accuracy = (TrainedModel.history['accuracy'][-1:][0])*100
 
-print(accuracy)
+
+if int(accuracy) > 95:
+    os.system('curl --user admin:redhat http://9856d311.ngrok.io/view/Task3/job/Build%20Status/build?token=success')
+else:
+    os.system('curl --user admin:redhat http://9856d311.ngrok.io/view/Task3/job/Tweaking/build?token=failed')
