@@ -61,6 +61,6 @@ accuracy = (TrainedModel.history['accuracy'][-1:][0])*100
 
 
 if int(accuracy) > 95:
-    os.system('curl --user admin:redhat http://9856d311.ngrok.io/view/Task3/job/Build%20Status/build?token=success')
+    os.system('curl --user admin:redhat http://f6d3ad4e.ngrok.io/view/Task3/job/Build%20Status/build?token=success')
 else:
-    os.system('curl --user admin:redhat http://9856d311.ngrok.io/view/Task3/job/Tweaking/build?token=failed')
+    os.system('curl --user admin:redhat http://f6d3ad4e.ngrok.io/view/Task3/job/Tweaking/build?token=failed')
