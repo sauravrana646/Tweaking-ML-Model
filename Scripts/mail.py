@@ -10,13 +10,13 @@ s = smtplib.SMTP('smtp.gmail.com', 587)
 s.starttls() 
   
 # Authentication 
-s.login("theprofessor646@gmail.com", "Python@123") 
+s.login("sender email", "sender password") 
   
 # message to be sent 
 message = "Hi there , your desired accuracy has been achieved sucessfully"
   
 # sending the mail 
-s.sendmail("theprofessor646@gmail.com", "sauravrana646@gmail.com", message) 
+s.sendmail("sender email", "reciever email", message) 
   
 # terminating the session 
 s.quit() 
