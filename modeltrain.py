@@ -75,6 +75,6 @@ kb.clear_session()
 # Get Accuracy
 accuracy = (TrainedModel.history['accuracy'][-1:][0])*100
 
-
+# This code will run inside a container so we need to create a file inside the docker in directory which is mounted with host
 with open('/data/accuracy.txt' , 'w') as f:
     f.write(str(accuracy))
