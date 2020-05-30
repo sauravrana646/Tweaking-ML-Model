@@ -58,6 +58,7 @@ addDense(10)
 addDense(10)
 addDense(10)
 addDense(10)
+addDense(10)
 
 
 
