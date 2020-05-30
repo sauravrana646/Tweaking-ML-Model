@@ -4,6 +4,7 @@ from keras.models import Sequential
 from keras.layers import Dense
 from keras.optimizers import RMSprop
 import keras.backend as kb
+from keras.callbacks import ModelCheckpoint
 import os
 
 #Function to add Dense Layers
@@ -39,9 +40,6 @@ model = Sequential()
 
 # Adding layers
 addDense(5)
-addDense(10)
-addDense(10)
-addDense(10)
 
 
 
@@ -54,8 +52,22 @@ model.add(Dense(units=3, activation='softmax'))
 # Compliling the model
 model.compile(optimizer= RMSprop(learning_rate=0.001),loss='categorical_crossentropy',metrics=['accuracy'])
 
+# creating a checkpoint for recovery in case of failure
+
+checkpoint_filepath = 'checkpoint.hdf5'
+model_checkpoint_callback = ModelCheckpoint(
+    filepath=checkpoint_filepath,
+    save_weights_only=True,
+    monitor='accuracy',
+    mode='max',
+    save_best_only=True)
+    
+
 # Training the model and fitting the data
-TrainedModel = model.fit(X,y_new,epochs = 20+20+20+10)
+
+
+
+TrainedModel = model.fit(X,y_new,epochs=10, callbacks=[model_checkpoint_callback])
 
 
 kb.clear_session()
