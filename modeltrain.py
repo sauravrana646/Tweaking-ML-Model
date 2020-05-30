@@ -73,5 +73,5 @@ kb.clear_session()
 accuracy = (TrainedModel.history['accuracy'][-1:][0])*100
 
 
-with open('accuracy.txt' , 'w') as f:
+with open('/data/accuracy.txt' , 'w') as f:
     f.write(str(accuracy))
