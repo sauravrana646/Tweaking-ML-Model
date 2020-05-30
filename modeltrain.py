@@ -39,17 +39,7 @@ model = Sequential()
 
 # Adding layers
 addDense(5)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
+
 
 
 
@@ -62,7 +52,7 @@ model.add(Dense(units=3, activation='softmax'))
 model.compile(optimizer= RMSprop(learning_rate=0.001),loss='categorical_crossentropy',metrics=['accuracy'])
 
 # Training the model and fitting the data
-TrainedModel = model.fit(X,y_new,epochs = 20+20+20+20+20+20+20+20+20+20+20+10)
+TrainedModel = model.fit(X,y_new,epochs = 10)
 
 
 kb.clear_session()
@@ -71,7 +61,5 @@ kb.clear_session()
 accuracy = (TrainedModel.history['accuracy'][-1:][0])*100
 
 
-if int(accuracy) > 95:
-    os.system('curl --user admin:redhat http://f6d3ad4e.ngrok.io/view/Task3/job/Build%20Status/build?token=success')
-else:
-    os.system('curl --user admin:redhat http://f6d3ad4e.ngrok.io/view/Task3/job/Tweaking/build?token=failed')
+with open('/root/task3/accuracy.txt' , 'w') as f:
+    f.write(str(accuracy))
