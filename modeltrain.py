@@ -41,6 +41,7 @@ model = Sequential()
 # Adding layers
 addDense(5)
 addDense(10)
+addDense(10)
 
 
 
