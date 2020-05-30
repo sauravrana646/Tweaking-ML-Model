@@ -4,7 +4,7 @@ with open('/root/Task3/modeltrain.py', 'r') as f:
     index = index + 11
 
 data = data[:index] +"\n" +  "addDense(10)" + data[index:]
-data = data.replace('epochs = ','epochs = 20+')
+data = data.replace('Epoch=','Epoch=20 + ')
 print(data)
    
 with open("/root/Task3/modeltrain.py" , "w") as f:
