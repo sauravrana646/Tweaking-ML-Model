@@ -44,6 +44,7 @@ addDense(10)
 addDense(10)
 addDense(10)
 addDense(10)
+addDense(10)
 
 
 
@@ -56,7 +57,7 @@ model.add(Dense(units=3, activation='softmax'))
 model.compile(optimizer= RMSprop(learning_rate=0.001),loss='categorical_crossentropy',metrics=['accuracy'])
 
 # Training the model and fitting the data
-TrainedModel = model.fit(X,y_new,epochs = 20+20+20+20+20+10)
+TrainedModel = model.fit(X,y_new,epochs = 20+20+20+20+20+20+10)
 
 
 kb.clear_session()
