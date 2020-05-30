@@ -40,46 +40,6 @@ model = Sequential()
 
 # Adding layers
 addDense(5)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-
-
-
 
 
 
@@ -103,8 +63,8 @@ model_checkpoint_callback = ModelCheckpoint(
 # Training the model and fitting the data
 
 
-
-TrainedModel = model.fit(X,y_new,epochs=10, callbacks=[model_checkpoint_callback])
+Epoch=10 
+TrainedModel = model.fit(X,y_new,epochs=Epoch, callbacks=[model_checkpoint_callback])
 
 
 kb.clear_session()
