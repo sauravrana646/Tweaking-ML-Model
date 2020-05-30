@@ -41,11 +41,7 @@ model = Sequential()
 # Adding layers
 addDense(5)
 addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
-addDense(10)
+
 
 
 
@@ -69,7 +65,7 @@ model_checkpoint_callback = ModelCheckpoint(
 # Training the model and fitting the data
 
 
-Epoch=10 
+Epoch=20 + 20 + 10 
 TrainedModel = model.fit(X,y_new,epochs=Epoch, callbacks=[model_checkpoint_callback])
 
 
