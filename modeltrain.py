@@ -42,6 +42,7 @@ model = Sequential()
 addDense(5)
 addDense(10)
 addDense(10)
+addDense(10)
 
 
 
